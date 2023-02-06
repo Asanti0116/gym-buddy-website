@@ -5,7 +5,10 @@
 <title>Home Page</title>
 <meta name="viewport" content="width=device- 
 width, initial-scale=1.0">
+<!--  Load CSS in Flask with html-->
 <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+<!--  Load JavaScript in Flask with html-->
+<script src="{{url_for('static', filename='script.js')}}"></script>
 </head>
 <body>
   <div class="topnav">
@@ -21,7 +24,10 @@ width, initial-scale=1.0">
       <span class="border">YOUR PREMIER 24HOUR GYM BUDDY</span>
     </div>
   </div>
+<div class="footer">
+  <p>Footer</p>
+</div>
 
-<script src=""></script>
+
 </body>
 </html>

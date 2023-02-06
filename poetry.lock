@@ -1,4 +1,12 @@
 [[package]]
+name = "blinker"
+version = "1.5"
+description = "Fast, simple object-to-object and broadcast signaling"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
 name = "click"
 version = "8.1.3"
 description = "Composable command line interface toolkit"
@@ -34,6 +42,20 @@ Werkzeug = ">=2.2.2"
 [package.extras]
 async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
+
+[[package]]
+name = "flask-debugtoolbar"
+version = "0.13.1"
+description = "A toolbar overlay for debugging Flask applications."
+category = "main"
+optional = false
+python-versions = ">=2.7"
+
+[package.dependencies]
+Blinker = "*"
+Flask = ">=0.8"
+itsdangerous = "*"
+werkzeug = "*"
 
 [[package]]
 name = "itsdangerous"
@@ -82,12 +104,14 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "61c7943ff9f9922433780cd3ac588e35905564ec8f2273ea4b6b08f6a565fb97"
+content-hash = "ed0b777fbc4bd738b0a65e534498ca0da0fe042392def42f93e24681e9459b82"
 
 [metadata.files]
+blinker = []
 click = []
 colorama = []
 flask = []
+flask-debugtoolbar = []
 itsdangerous = []
 jinja2 = []
 markupsafe = []
