@@ -1,127 +1,74 @@
-<img src="https://gym-buddy-website.asanti0116.repl.co/static/images/main-img.jpg"/>
-
-<img class='fit-picture' 
-   src="https://gym-buddy- 
-   website.asanti0116.repl.co/static/images/main- 
-   img.jpg"
-   alt='backside of girl with a barbel on her 
-   back'/>
-
-body {
-  background: url(img.png);
-}
-
-html { 
-  background: url(img.png) no-repeat center center fixed;
-  background-size: cover;
-}
-
-.fit-picture {
-  width: 250px
-}
+from sqlalchemy.exc import IntegrityError
+from models import db, connect_db, User
+from forms import UserAddForm, LoginForm
+from secrets_1 import API_CLIENT_ID, API_SECRET_KEY
+from datetime import datetime, timedelta
 
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-  font: 400 15px/1.8 "Lato", sans-serif;
-  color: #777;
-}
 
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  position: relative;
-  opacity: 0.65;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
-.bgimg-1 {
-  background-image: url("img_parallax.jpg");
-  height: 100%;
-}
-
-.caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-}
-
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
-}
-
-h3 {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-  color: #111;
-}
-</style>
-</head>
-<body>
-
-<div class="main-img">
-  <div class="caption">
-    <span class="border">FULL PAGE</span><br>
-    <span class="border">BACKGROUND IMAGE</span>
-  </div>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#exercise of the day">Exercise of the day</a>
+  <a href="#motivation">Motivation</a>
+  <a href="#workouts">Workouts</a>
+  <a href="#notes">Notes</a>
+  <a href="#login">Login</a>
 </div>
+-----------------------------------------
+add to app.py
 
-<p style="padding:5px 15px">This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
+to the top
+from sqlalchemy.exc import IntegrityError
+from models import db, connect_db, User
+from forms import UserAddForm, LoginForm
+from secrets_1 import API_CLIENT_ID, API_SECRET_KEY
+from datetime import datetime, timedelta
 
+under import request and import os
+CURR_USER_KEY=""
+AUTH_BASE_URL = ""
+API_SEARCH_BASE_URL = ""
+
+
+
+------------------------------------------
+GET: requests data from a server. 
+This is the most common type of request. 
+Using it we can get the data we are interested 
+in from those that the API is ready to share.
+
+POST: adds new data to the server. Using this 
+type of request, you can, for example, add a 
+new contact to CRM.
+
+PUT: changes existing information. For example, using this type of request, it would be possible to change the color or value of an existing product.
+
+DELETE: deletes existing information
+How to start using an API?
+
+
+Get an API Key
+
+Test API Endpoints
+Create your first App
+
+
+---------------------------------------------
+my version of a form
+
+{% extends 'base.html' %}
+{% block content %}
+
+  <h1>YOUR PERSONAL GYM BUDDY</h1>
+  <p>Create an account and get after it</p>
+  <form action="">
+    <input type="text" placeholder="Enter email here" name="email">
+    <input type="text" placeholder="Name" name="name">
+  <button>Submit!</button>
+  <div class="side-img">
+  </div>
+  
 </body>
 </html>
 
-
-current workingish 
------------------------
-body {
-  
-}
-
-.background {
-  /* The image used */
-  background-image: url("/static/images/main-img.jpg");
-
-  /* Full height */
-  height: 100%;
-  
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
------------------------------------
-
-
-footer start
-----------------------------------
-<style>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: red;
-  color: white;
-  text-align: center;
-}
-</style>
-
-<div class="footer">
-  <p>Footer</p>
-</div>
+{% endblock %}

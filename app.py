@@ -1,5 +1,22 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for
 from flask_debugtoolbar import DebugToolbarExtension
+
+import requests
+
+#################################################################
+# API INFO
+url = "https://exercisedb.p.rapidapi.com/exercises/target/%7Btarget%7D"
+
+headers = {
+  "X-RapidAPI-Key": "9ded74f4f8msha4284305d05698dp19f784jsn6e8a645eabe3",
+  "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
+}
+
+response = requests.request("GET", url, headers=headers)
+
+print(response.text)
+
+#################################################################
 
 app = Flask(__name__)
 
@@ -32,14 +49,23 @@ def notes():
   return render_template("notes.html")
 
 
+#################################################################
+# User signup/login/logout
+
+
+@app.route('/sign-up')
+def sign_up():
+  return render_template('sign-up.html')
+
+
 @app.route("/login")
 def login():
   return render_template("login.html")
 
 
-@app.route("/join-now")
-def join_now():
-  return render_template("join-now.html")
+@app.route("/log-out")
+def log_out():
+  return render_template("log-out.html")
 
 
 if __name__ == "__main__":
